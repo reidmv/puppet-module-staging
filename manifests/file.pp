@@ -43,10 +43,10 @@ define staging::file (
   Exec {
     path        => $staging::exec_path,
     environment => $environment,
-    cwd         => $staging_dir,
     creates     => $target_file,
     timeout     => $timeout,
     logoutput   => on_failure,
+    # cwd         => $staging_dir,
   }
 
   case $::staging_http_get {
